@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonhomme Pendu</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Bonhomme Pendu</h1>
+    </header>
+    <main>
+        <nav>
+            <p>Trouvez le mot caché - Entrez une letre a la fois!</p>
+            <div class="menu">
+                <div class="score">
+                    <p>Score :  </p>
+                    <div class="scores" id="score"></div>
+                </div>
+                <div class="contenant-aide">
+                    <button id="btnAide" class="btnAide">Aide</button>
+                    <div id="aide" class="aide"></div>
+                </div>
+            </div>
+            <div class="nbAide" id="nbAide">nbAide</div>
+        </nav>
+        <div class="image">
+            <img class="emoji1" src="./img/succes.png" alt="img-succes" srcset="" id="emoji1">
+            <img class="emoji2" src="./img/echec2.png" alt="img-echec" srcset="" id="emoji2">
+        </div>
+        <div class="jeu-contenant">
+            <svg height="250" width="300" class="figure-contenant">
+                <!-- Support-->
+                <line x1="40" y1="20" x2="120" y2="20"></line>
+                <line x1="40" y1="50" x2="70" y2="20"></line>
+                <line x1="120" y1="20" x2="120" y2="90" class="corde"></line>
+                <line x1="40" y1="20" x2="40" y2="230"></line>
+                <line x1="0" y1="230" x2="80" y2="230"></line>
+                <circle cx="120" cy="88" r="1" ></circle>
+            
+                <!-- Bonhomme-->
+                <circle cx="105" cy="70" r="10" class="figure-partie"></circle>
+
+                <line x1="102" y1="71" x2="102" y2="70" class="figure-souriant"></line>
+                <line x1="110" y1="71" x2="110" y2="70" class="figure-souriant"></line>
+                <line x1="104" y1="75" x2="108" y2="75" class="figure-souriant"></line>
+               
+
+
+                <!-- Corps-->
+                <line x1="113" y1="80" x2="119" y2="90" class="figure-partie"></line>
+                <line x1="120" y1="90" x2="120" y2="135" class="figure-partie"></line>
+                <!-- Bras-->
+                <line x1="120" y1="90" x2="105" y2="110" class="figure-partie"></line>
+                <line x1="120" y1="90" x2="135" y2="110" class="figure-partie"></line>
+                <!-- Pieds-->
+                <line x1="120" y1="135" x2="105" y2="170" class="figure-partie"></line>
+                <line x1="120" y1="135" x2="135" y2="170" class="figure-partie"></line>
+                
+                <!--Tête-->
+                <circle cx="280" cy="110" r="10" class="figure"></circle>
+                <line x1="276" y1="110" x2="276" y2="110" class="figure souriant"></line>
+                <line x1="283" y1="110" x2="283" y2="110" class="figure souriant"></line>
+                <line x1="277" y1="115" x2="282" y2="115" class="figure souriant"></line>
+                
+                <!--COUP-->
+                <line x1="280" y1="120" x2="280" y2="135" class="figure souriant"></line>
+                <!--Corps-->
+                <line x1="280" y1="135" x2="280" y2="168" class="figure"></line>
+                <!--Bras-->
+                <line x1="262" y1="150" x2="280" y2="135" class="figure"></line>
+                <line x1="294" y1="150" x2="280" y2="135" class="figure"></line>
+                <!--Pieds-->
+                <line x1="262" y1="200" x2="280" y2="168" class="figure"></line>
+                <line x1="294" y1="200" x2="280" y2="168" class="figure"></line>
+                
+            </svg>
+            <div class="mauvaises-lettres-contenant" id="mauvaisesL">
+                <p>Mauvaises Lettres</p>
+                <div id="mauvaises-lettres"></div>
+            </div>
+            <div class="mot" id="mot"> </div>
+            
+        </div>
+        <!--Contenant pour le message final-->
+        <div class="popup-contenant" id="popup-contenant">
+            <div class="popup">
+                <h2 id="message-final"></h2>
+                <button id="play-buttom">Rejouer!</button>
+            </div>
+        </div>
+        <div class="bouttons">
+            <button class="redemarrer" id="redemarrer">Redémarrer</button>
+            <button class="actualiser" id="actualiser">Actualiser</button>
+        </div>
+
+        <!--Notification-->
+        <div class="notification-contenant" id="notification-contenant">
+            <p>Vous avez déjà essayer cette letre</p>
+        </div>
+    </main>
+    <footer>
+        <p>Développé par Vezely Kanté & Alaaedine</p>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: lightsteelblue;
+    color: black;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    max-width: 31.25rem;
+    overflow: hidden;
+}
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+.menu{
+    display: flex;
+    gap: 15rem;   
+}
+.image{
+    height: 0;
+    position: relative;
+}
+.image img{
+    width: 35px;
+    height: 30px;
+}
+.emoji1{
+    margin: 0 auto;
+    opacity: 0;
+    position: absolute;
+}
+.emoji1.affiche1{
+    transition: 1s;
+    opacity: 1;
+}
+.emoji2{
+    margin: 0 auto;
+    opacity: 0;
+    z-index: 1;
+}
+.emoji2.affiche2{
+    transition: 1s;
+    opacity: 1;
+}
+.contenant-aide{
+    margin-top: 20px;
+    display: flex;
+    
+}
+main nav p{
+    font-size: 18px;
+    margin: 0;
+}
+nav{
+    position: relative;
+}
+header{
+    align-items: center;
+    margin: 0 auto;
+}
+header h1{
+    text-align: center;
+    margin: 0 auto;
+    font-size: 50px;
+    font-family: 'Shadows Into Light', cursive;
+    letter-spacing: 8px;
+    text-shadow: 2px  2px 2px #354961;
+}
+.aide{
+    display: none;
+    margin-left: 5px;
+    color: green;
+    animation: identifier 1s;
+}
+.score{
+    display: flex;
+    
+    margin: 10px 0 5px 5px;
+}
+.scores{
+    position: relative;
+    margin-top: 2px;
+    bottom: 0;
+    
+}
+.Scores{
+
+    animation: styleScore 1s;
+}
+.espace{
+    margin-right: 5px;
+    
+}
+.nbAide{
+    display: flex;
+    position: absolute;
+    right: 45px;
+}
+.jeu-contenant{
+    padding: 20px 30px;
+    margin: auto;
+    height: 350px;
+    width: 450px;
+    position: relative;
+}
+.figure-contenant{
+    stroke: black;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    fill: transparent;
+}
+.figure{
+    stroke: black;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    fill: aliceblue;
+    display: none;
+}
+
+.figure-souriant{
+    display: none;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    fill: transparent;
+}
+.souriant{
+    stroke: black;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    fill: transparent;
+}
+.corde{
+    stroke-width: 2px;
+}
+.figure-partie{
+    display: none;
+    fill: rgb(245, 219, 219);
+}
+@keyframes styleScore {
+    from{
+        font-size: 10px;
+        color: white;
+        opacity: 0.3;
+    }
+    to{
+        font-size: 15px;
+        color: black;
+        opacity: 1;
+    }
+}
+.mauvaises-lettres-contenant{
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    display: none;
+    flex-direction: column;
+    text-align: right;
+}
+
+.mauvaises-lettres-contenant p {
+    margin: 0 0 0 0;
+}
+.mauvaises-lettres-contenant span{
+    font-size: 24px;
+    font-family: 'Shadows Into Light', cursive;
+    color: red;
+}
+.mot{
+    display: flex;
+    position: absolute;
+    bottom: 10;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+}
+
+.lettre{
+    border-bottom: 3px solid black;
+    display: inline-block;
+    font-size: 35px;
+    color: forestgreen;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3px;
+    height: 50px;
+    width: 20px;
+    font-family: 'Shadows Into Light', cursive;
+}
+.bouttons{
+    display: flex;
+    gap: 8rem;
+}
+.redemarrer{
+    margin-left: 65px;
+}
+
+
+.actualiser, .redemarrer, .btnAide {
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    bottom: 5px;
+    background-color: #c4d8f0;
+    
+    font-family: 'Roboto Condensed', sans-serif;
+    border: solid 2px #21364e;
+    border-radius: 5px;
+}
+.actualiser:active, .redemarrer:active, .btnAide:active{
+    transform: scale(0.98);
+    transition: ease-in-out;
+    
+}
+.actualiser:hover, .redemarrer:hover, .btnAide:hover{
+    background-color: #a5c3e7;
+    transition: 0.5s;
+}
+.lettreAfficher{
+    animation: deplacerBonhomme 1s;
+}
+.lettreAfficherBonhommeP{
+    animation: AfficherBonhommePendu 1s;
+}
+@keyframes AfficherBonhommePendu {
+    from{
+        color: white;
+        opacity: 0.2;
+    }
+    to{
+        color: black;
+        opacity: 1;
+    }
+}
+@keyframes deplacerBonhomme {
+    from{
+        transform: translateX(-150px);
+        color: white;
+        opacity: 0.3;
+    }
+    to{
+        transform: translateX(0);
+        color: black;
+        opacity: 1;
+    }
+}
+@keyframes identifier {
+    from{
+        transform: translateY(-150px);
+        color: white;
+        opacity: 0.3;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.popup-contenant{
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.popup{
+    background-color: #21364e69;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    transition: linear;
+    text-align: center;
+}
+.popup button{
+    cursor: pointer;
+    background-color: rgb(205, 205, 212);
+    column-rule: #354961;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+.popup button:active{
+    transform: scale(0.98);
+}
+.popup button:hover{
+    background-color: #c4d8f0;
+}
+.popup button:focus{
+    outline: 0;
+}
+.notification-contenant{
+    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #21364e;
+    color: white;
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px 0;
+    position: relative;
+    margin: 0 auto;
+    width: 350px;
+    opacity: 0;
+    z-index: 1;
+}
+.notification-contenant.afficher{
+    transition: 1s;
+    opacity: 1;
+}
+
+footer {
+    font-family: 'Shadows Into Light', cursive;
+    position: relative;
+    bottom: 30px;
+    font-size: 12px;
+}
